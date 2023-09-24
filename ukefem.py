@@ -26,7 +26,7 @@ def spill_snilt(valg = list):
 
 
 def spill_slemt(valg): 
-    if len(valg) > 5: 
+    if len(valg) >= 5: 
         return "svik"
     else: 
         return "samarbeid"    
@@ -44,12 +44,31 @@ def utfor_spill():
         scoreSlem += score[1]
         valgSlem.append(slem)
         valgSnill.append(snill)
+
     print(f"Score snill: {scoreSnill}")
     print(f"Score slem: {scoreSlem}")
 
-utfor_spill()
-        
+def utfor_spill_uendelig(): 
+        valgSnill = []
+        valgSlem = []
+        scoreSnill = 0
+        scoreSlem = 0
+        while True: 
+            finput = input("Skriv inn om programmet skal kjøre eller ikke: ")
+            if finput == "ja": 
+                snill = spill_snilt(valgSlem)
+                slem = spill_slemt(valgSlem)
+                score = beregnScore(snill, slem)
+                scoreSnill += score[0]
+                scoreSlem += score[1]
+                valgSlem.append(slem)
+                valgSnill.append(snill)
+                print(f"Score snill: {scoreSnill}")
+                print(f"Score slem: {scoreSlem}")
+            else: 
+                print(f"Score snill: {scoreSnill}")
+                print(f"Score slem: {scoreSlem}")
+                break
 
-
-
-        
+utfor_spill_uendelig()
+            
