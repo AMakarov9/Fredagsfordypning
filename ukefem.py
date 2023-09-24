@@ -9,3 +9,47 @@ def beregnScore(valg_spiller1, valg_spiller2):
             return [5, 0]
         else: 
             return [1, 1]
+        
+def spill_snilt(valg = list):
+    count = 0
+    if len(valg) == 0:
+         return "samarbeid"
+    else: 
+        for i in valg: 
+            if i == "svik": 
+                count += 1
+        if count > (len(valg)//2): 
+            return "svik"
+            
+        else: 
+            return "samarbeid"
+
+
+def spill_slemt(valg): 
+    if len(valg) > 5: 
+        return "svik"
+    else: 
+        return "samarbeid"    
+
+def utfor_spill(): 
+    valgSnill = []
+    valgSlem = []
+    scoreSnill = 0
+    scoreSlem = 0
+    for i in range(1000): 
+        snill = spill_snilt(valgSlem)
+        slem = spill_slemt(valgSlem)
+        score = beregnScore(snill, slem)
+        scoreSnill += score[0]
+        scoreSlem += score[1]
+        valgSlem.append(slem)
+        valgSnill.append(snill)
+    print(f"Score snill: {scoreSnill}")
+    print(f"Score slem: {scoreSlem}")
+
+utfor_spill()
+        
+
+
+
+        
