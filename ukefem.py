@@ -10,7 +10,7 @@ def beregnScore(valg_spiller1, valg_spiller2):
         else: 
             return [1, 1]
         
-def spill_snilt(valg = list):
+def spill_snilt(valg: list) -> str:
     count = 0
     if len(valg) == 0:
          return "samarbeid"
@@ -20,7 +20,6 @@ def spill_snilt(valg = list):
                 count += 1
         if count > (len(valg)//2): 
             return "svik"
-            
         else: 
             return "samarbeid"
 
@@ -71,4 +70,3 @@ def utfor_spill_uendelig():
                 break
 
 utfor_spill_uendelig()
-            
