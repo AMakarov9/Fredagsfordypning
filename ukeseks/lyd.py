@@ -53,9 +53,9 @@ test = lag_sang_fra_noter(les_sang_fra_fil("sang.txt", noter))
 def fade(sang): 
     lengde = len(sang)
     refrence = lengde//10
-    countIndex = 5
-    volumeLevel = 5
-    for i in range(lengde//2, lengde): 
+    countIndex = 0
+    volumeLevel = 10
+    for i in range(0, lengde): 
         if i < (refrence*countIndex): 
             sang[i] = sang[i]*(volumeLevel/100)
               

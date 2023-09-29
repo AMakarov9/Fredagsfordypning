@@ -10,7 +10,7 @@ def beregnScore(valg_spiller1, valg_spiller2):
         else: 
             return [1, 1]
         
-def spill_snilt(valg: list) -> str:
+def spill_snilt(valg):
     count = 0
     if len(valg) == 0:
          return "samarbeid"
