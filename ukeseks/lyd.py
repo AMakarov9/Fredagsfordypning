@@ -50,7 +50,7 @@ def lag_sang_fra_noter(noter):
 
 test = lag_sang_fra_noter(les_sang_fra_fil("sang.txt", noter))
 
-def fade(sang): 
+def fade_ut(sang): 
     lengde = len(sang)
     refrence = lengde//10
     countIndex = 0
@@ -66,4 +66,14 @@ def fade(sang):
     
     return sang 
 
-skriv_lyd_til_fil(fade(test), 44100, "filnavn.wav")
+def forenkle_lyd(lyd): 
+    for i in range(0, len(lyd)): 
+        if lyd[i] > 16000: 
+            lyd[i] = 32000
+        elif lyd[i] < 16000: 
+            lyd[i] = 0
+    return lyd 
+
+
+
+skriv_lyd_til_fil(forenkle_lyd(test), 44100, "filnavn.wav")
